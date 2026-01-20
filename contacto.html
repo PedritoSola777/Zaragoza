@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Constructora Zaragoza</title>
+  <link rel="shortcut icon" href="src/img/logo/favZaragoza.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="src/css/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    /* ================= NAVBAR ================= */
+
+
+
+/* ===== Logo ===== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+.logo img {
+  height: 42px;
+}
+
+/* ===== Links ===== */
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 14px;
+  opacity: .9;
+  transition: opacity .2s ease;
+}
+
+.navbar nav a:hover {
+  opacity: 1;
+}
+
+/* ================= DROPDOWN SERVICIOS ================= */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* botón servicios */
+.dropbtn {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font: inherit;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* caret */
+.dropbtn .caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  opacity: .85;
+  transform: translateY(1px);
+}
+
+/* menú */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  min-width: 280px;
+
+  background: #1b1b1b;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px;
+  padding: 10px 0;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.45);
+  z-index: 9999;
+
+  display: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,.86);
+  text-decoration: none;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #084883;
+  color: #fff;
+}
+
+/* mostrar menú */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* zona invisible para no perder hover */
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding: 18px 24px;
+  }
+
+  .navbar nav {
+    gap: 14px;
+  }
+
+  .logo span {
+    display: none; /* solo logo en mobile */
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .navbar nav a,
+  .dropbtn {
+    font-size: 13px;
+  }
+
+  .dropdown-menu {
+    min-width: 220px;
+  }
+
+}
+.info-block a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.info-block a:visited {
+  color: inherit;
+}
+
+.info-block a:hover {
+  opacity: .75;
+}
+
+
+
+    /* ================= HERO ================= */
+
+    .contact-hero {
+      height: 70vh;
+      background: url("https://img.freepik.com/foto-gratis/vista-angulo-rascacielos_1359-1047.jpg?uid=R226113459&ga=GA1.1.2046338130.1761276142&semt=ais_hybrid&w=740&q=80") center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+    }
+
+    .hero-content {
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .hero-content span {
+      font-size: .9rem;
+      opacity: .8;
+    }
+
+    /* ================= CONTACT SECTION ================= */
+
+    .contact-section {
+      padding: 120px 8%;
+      background: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* FORM */
+
+    .contact-form h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-form p {
+      font-size: .9rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 12px 5px;
+      margin-bottom: 25px;
+      outline: none;
+      font-size: .95rem;
+    }
+
+    .contact-form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .contact-form button {
+      background: #084883;
+      color: white;
+      border: none;
+      padding: 14px 40px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .contact-form button:hover {
+      background: #063a68;
+    }
+
+    /* INFO CARD */
+
+    .contact-info {
+      background: #111;
+      color: white;
+      padding: 60px 50px;
+      background-image: url("src/img/bgContact.jpg");
+      background-size: cover;
+      background-blend-mode: overlay;
+    }
+
+    .contact-info small {
+      opacity: .6;
+      letter-spacing: 1px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin: 15px 0 20px;
+    }
+
+    .contact-info p {
+      font-size: .9rem;
+      line-height: 1.6;
+      opacity: .85;
+      margin-bottom: 30px;
+    }
+
+    .info-block {
+      margin-bottom: 20px;
+    }
+
+    .info-block strong {
+      display: block;
+      font-size: .8rem;
+      opacity: .7;
+      margin-bottom: 5px;
+    }
+
+    .info-block span {
+      font-size: .9rem;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info {
+        padding: 40px 30px;
+      }
+    }
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  /* OCULTA NAV DESKTOP */
+  .navbar nav {
+    display: none !important;
+  }
+
+  /* deja solo logo + burger */
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .logo span {
+    display: none; /* solo icono */
+  }
+
+}
+
+
+  </style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+  <div class="logo">
+    <a href="index.html">
+      <img src="src/img/logo/Zaragoza1.png" alt="Constructora Zaragoza">
+    </a>
+    <span>CONSTRUCTORA<br><b>ZARAGOZA</b></span>
+  </div>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+
+    <div class="nav-dropdown">
+      <button class="dropbtn" type="button">
+        Servicios <span class="caret"></span>
+      </button>
+
+      <div class="dropdown-menu">
+        <a href="obra-civil.html">Obra Civil y Estructura</a>
+        <a href="instalaciones.html">Instalaciones Especializadas</a>
+        <a href="seguridad.html">Sistemas de Seguridad</a>
+        <a href="climatizacion.html">Climatización y Control Ambiental</a>
+        <a href="infraestructura.html">Infraestructura Técnica y Operativa</a>
+        <a href="acabados.html">Acabados y Detalles Interiores</a>
+        <a href="mantenimiento.html">Mantenimiento Integral</a>
+        <a href="polizas.html">Pólizas y Contratos de Servicio</a>
+        <a href="suministro.html">Comercialización y Suministro</a>
+      </div>
+    </div>
+
+    <a href="proyectos.html">Proyectos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <button class="burger" id="burgerBtn" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+  <div class="mobile-menu-panel">
+
+    <div class="mobile-menu-header">
+      <button class="close-menu" id="closeMenu">✕</button>
+    </div>
+
+    <nav class="mobile-nav">
+
+      <a href="index.html">Inicio</a>
+
+      <div class="mobile-dropdown">
+        <button class="mobile-dropbtn">
+          Servicios <span>▾</span>
+        </button>
+
+        <div class="mobile-submenu">
+          <a href="obra-civil.html">Obra Civil y Estructura</a>
+          <a href="instalaciones.html">Instalaciones Especializadas</a>
+          <a href="seguridad.html">Sistemas de Seguridad</a>
+          <a href="climatizacion.html">Climatización y Control Ambiental</a>
+          <a href="infraestructura.html">Infraestructura Técnica y Operativa</a>
+          <a href="acabados.html">Acabados y Detalles Interiores</a>
+          <a href="mantenimiento.html">Mantenimiento Integral</a>
+          <a href="polizas.html">Pólizas y Contratos de Servicio</a>
+          <a href="suministro.html">Comercialización y Suministro</a>
+        </div>
+      </div>
+
+      <a href="proyectos.html">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
+
+    </nav>
+
+  </div>
+
+</div>
+
+<!-- HERO -->
+<section class="contact-hero" id="contacto">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Contacto</h1>
+    <span>INICIO • CONTACTO</span>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+
+  <div class="contact-grid">
+
+    <!-- FORM -->
+    <div class="contact-form">
+      <form
+  name="contactoPrueba"
+  method="POST"
+  netlify
+  action="/gracias/"
+>
+
+  <!-- requerido por Netlify -->
+  <input type="hidden" name="form-name" value="contacto">
+
+  <h2>Ponte en Contacto</h2>
+  <p>Tu email no será publicado. Los campos obligatorios están marcados con *</p>
+
+  <input
+    type="text"
+    name="nombre"
+    placeholder="Tu nombre *"
+    required
+  >
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Tu Email *"
+    required
+  >
+
+  <textarea
+    name="mensaje"
+    placeholder="Mensaje..."
+    required
+  ></textarea>
+
+  <button type="submit">ENVIAR MENSAJE</button>
+
+</form>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <small>[ NUESTROS DETALLES DE CONTACTO ]</small>
+      <h3>Comencemos un Nuevo Proyecto</h3>
+
+      <p>
+        No dudes en ponerte en contacto con nosotros en cualquier momento.
+        Es un placer atender tus dudas.
+      </p>
+
+      <div class="info-block">
+        <strong>NUESTRA DIRECCIÓN</strong>
+        <span>C. 29 sur 4, La Paz, 72160 Heroica Puebla de Zaragoza, Pue.</span>
+      </div>
+
+      <div class="info-block">
+  <strong>NUESTRO MAILBOX</strong>
+  <span>
+    <a href="mailto:proyectos@constructorazaragoza.com">
+      proyectos@constructorazaragoza.com
+    </a>
+  </span>
+</div>
+
+<div class="info-block">
+  <strong>NUESTRO TELÉFONO</strong>
+  <span>
+    <a href="tel:+522227301828">
+      (222) 730 1828
+    </a>
+  </span>
+</div>
+
+<div class="info-block">
+  <strong>ESCRÍBENOS POR WHATSAPP</strong>
+  <span>
+    <a href="https://wa.me/522227301828" target="_blank" rel="noopener">
+      (222) 730 1828
+    </a>
+  </span>
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="site-footer">
+
+  <div class="footer-container">
+
+    <!-- LOGO + FRASE -->
+    <div class="footer-brand">
+
+      <div class="brand-logo">
+        <img src="src/img/logo/Zaragoza1.png" alt="Constructora Zaragoza">
+      </div>
+
+      <p class="brand-tagline">Realidades que cumplen sueños</p>
+
+    </div>
+
+
+    <!-- CONTACTO -->
+    <div class="footer-contact">
+
+      <h4>Contacto</h4>
+
+      <div class="contact-item">
+        <span>📍</span>
+        <p>
+          C. 29 Sur 4, La Paz, 72160<br>
+          Heroica Puebla de Zaragoza, Pue.
+        </p>
+      </div>
+
+      <div class="contact-item">
+  <span>✉️</span>
+  <p>
+    <a href="mailto:proyectos@constructorazaragoza.com">
+      proyectos@constructorazaragoza.com
+    </a>
+  </p>
+</div>
+
+      <div class="contact-item">
+  <span>📞</span>
+  <p>
+    <a href="tel:+522227301828">
+      (222) 730 1828
+    </a>
+  </p>
+</div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Constructora Zaragoza. Todos los derechos reservados.</p>
+  </div>
+
+</footer>
+
+<script src="src/js/main.js"></script>
+
+</body>
+</html>

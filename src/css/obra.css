@@ -1,0 +1,646 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+}
+
+/* ===== NAVBAR ===== */
+/* =========================
+   NAVBAR (DESKTOP BASE)
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #fff;
+  background: transparent;
+  z-index: 9999;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Logo ===== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+.logo img {
+  height: 42px;
+}
+
+/* ===== Desktop Nav ===== */
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 14px;
+  opacity: .9;
+  transition: opacity .2s ease;
+}
+
+.navbar nav a:hover {
+  opacity: 1;
+}
+
+
+/* =========================
+   DROPDOWN SERVICIOS DESKTOP
+========================= */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropbtn {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font: inherit;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropbtn .caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  opacity: .85;
+  transform: translateY(1px);
+}
+
+/* menú */
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  min-width: 280px;
+
+  background: #1b1b1b;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px;
+  padding: 10px 0;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.45);
+  z-index: 9999;
+
+  display: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,.86);
+  text-decoration: none;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #084883;
+  color: #fff;
+}
+
+/* hover */
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 14px;
+}
+
+
+/* =========================
+   BURGER (SOLO MOBILE)
+========================= */
+
+.burger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 10001;
+}
+
+.burger span {
+  position: absolute;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  transition: .3s ease;
+}
+
+.burger span:nth-child(1) { transform: translateY(-8px); }
+.burger span:nth-child(2) { transform: translateY(0); }
+.burger span:nth-child(3) { transform: translateY(8px); }
+
+.burger.active span:nth-child(1) { transform: rotate(45deg); }
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) { transform: rotate(-45deg); }
+
+
+/* =========================
+   MOBILE OVERLAY
+========================= */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 72, 131, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s ease;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* =========================
+   MOBILE PANEL
+========================= */
+
+.mobile-menu-panel {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 86%;
+  max-width: 360px;
+  height: 100%;
+
+  background: #0a3f73;
+  padding: 22px;
+
+  transition: .35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.active .mobile-menu-panel {
+  left: 0;
+}
+
+
+/* =========================
+   MOBILE HEADER
+========================= */
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.close-menu {
+  background: rgba(255,255,255,.12);
+  border: none;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav a,
+.mobile-dropbtn {
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  font-size: .95rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+
+/* =========================
+   MOBILE DROPDOWN
+========================= */
+
+.mobile-dropdown span {
+  float: right;
+  transition: .3s;
+}
+
+.mobile-dropdown.active span {
+  transform: rotate(180deg);
+}
+
+.mobile-submenu {
+  display: none;
+  flex-direction: column;
+  padding-left: 12px;
+  margin-bottom: 6px;
+}
+
+.mobile-dropdown.active .mobile-submenu {
+  display: flex;
+}
+
+.mobile-submenu a {
+  font-size: .88rem;
+  opacity: .9;
+  padding: 10px 0;
+}
+
+/* ===== HIDE NAVBAR ANIMATION ===== */
+
+.navbar {
+  transition: transform .35s ease, background .3s ease;
+}
+
+.navbar.navbar-hide {
+  transform: translateY(-110%);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding: 18px 22px;
+  }
+
+  .navbar nav {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo img { width: 48px; }
+
+.navbar nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+/* ===== HERO ===== */
+
+.service-hero {
+  height: 60vh;
+  background: url("https://img.freepik.com/foto-gratis/escena-monocromatica-que-representa-vida-trabajadores-sitio-industria-construccion_23-2151431492.jpg?t=st=1768588149~exp=1768591749~hmac=e1aa310823e4a2b17180079ecf08a1651504aacc3ea8466b62adfaad6de78c36&w=1480") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+}
+
+.service-hero h1,
+.service-hero span {
+  position: relative;
+  z-index: 2;
+}
+
+.service-hero h1 {
+  font-size: 3rem;
+}
+
+/* ===== LAYOUT ===== */
+
+.service-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  max-width: 1300px;
+  margin: 100px auto;
+  gap: 60px;
+  padding: 0 6%;
+}
+
+/* ===== MENU ===== */
+
+.service-menu{
+  background:#084883;
+  padding:30px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.service-menu a{
+  background:transparent;
+  border:none;
+  color:white;
+  text-align:left;
+  padding:14px 16px;
+  font-size:.85rem;
+  letter-spacing:.5px;
+  cursor:pointer;
+  transition:.25s;
+  border-radius:4px;
+  text-decoration:none;
+  display:block;
+}
+
+.service-menu a:hover{
+  background:rgba(255,255,255,.12);
+}
+
+.service-menu a.active{
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.7);
+}
+
+
+/* ===== CONTENT ===== */
+
+.service-content small {
+  color: #777;
+}
+
+.service-content h2 {
+  margin: 12px 0 15px;
+  font-size: 2.1rem;
+}
+
+.service-content p {
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.service-content h3 {
+  margin-top: 35px;
+}
+
+.service-content ul {
+  padding-left: 20px;
+}
+
+.service-content li {
+  margin-bottom: 6px;
+}
+
+
+@media (max-width: 768px){
+
+  /* ===== NAVBAR ===== */
+  .navbar{
+    padding:14px 5%;
+  }
+
+  .nav-container{
+    flex-direction:row;
+  }
+
+  .logo span{
+    font-size:.7rem;
+    line-height:1.1;
+  }
+
+  nav{
+    display:none; /* si luego quieres hamburguesa lo vemos */
+  }
+
+  /* ===== HERO ===== */
+  .service-hero{
+    height:45vh;
+    padding:0 8%;
+    text-align:center;
+  }
+
+  .service-hero h1{
+    font-size:1.8rem;
+  }
+
+  .service-hero span{
+    font-size:.7rem;
+  }
+
+  /* ===== LAYOUT ===== */
+  .service-layout{
+    grid-template-columns:1fr;
+    padding:60px 6%;
+  }
+
+  /* ===== MENU ===== */
+  .service-menu{
+    width:100%;
+    padding:10px;
+    display:flex;
+    flex-direction:row;
+    overflow-x:auto;
+    gap:10px;
+  }
+
+  .service-menu a{
+    white-space:nowrap;
+    font-size:.7rem;
+    padding:10px 14px;
+    border-radius:6px;
+    border:1px solid rgba(255,255,255,.4);
+    flex:0 0 auto;
+  }
+
+  /* ===== CONTENT ===== */
+  .service-content{
+    padding:40px 0 0;
+  }
+
+  .service-content h2{
+    font-size:1.6rem;
+  }
+
+  .service-content h3{
+    font-size:1.2rem;
+  }
+
+  .service-content p{
+    font-size:.9rem;
+  }
+
+  .service-content ul{
+    padding-left:18px;
+  }
+}
+
+@media (max-width:480px){
+
+  .service-hero h1{
+    font-size:1.5rem;
+  }
+
+  .service-content h2{
+    font-size:1.4rem;
+  }
+
+  .service-menu a{
+    font-size:.65rem;
+    padding:8px 12px;
+  }
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  background: #121212;
+  color: #cccccc;
+  padding-top: 80px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* BRAND */
+
+.footer-brand img {
+  width: 160px;
+  margin-bottom: 18px;
+}
+
+.brand-tagline {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* CONTACT */
+
+.footer-contact h4 {
+  font-size: 1rem;
+  margin-bottom: 22px;
+  color: white;
+}
+
+.contact-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact-item span {
+  font-size: 1rem;
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+  margin-top: 70px;
+  padding: 20px 8%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+}
+
+
+
