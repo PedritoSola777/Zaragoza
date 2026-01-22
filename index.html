@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Constructora Zaragoza</title>
-  <link rel="shortcut icon" href="src/img/logo/favZaragoza.png" type="image/x-icon">
   <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
@@ -13,7 +12,7 @@
 <section class="hero">
 
   <!-- NAVBAR -->
-  <header class="navbar">
+   <header class="navbar">
       <button class="burger" id="burgerBtn" aria-label="Abrir menú">
         <span></span>
         <span></span>
@@ -21,10 +20,12 @@
       </button>
     <div class="logo">
       <div class="brand-logo">
-        <a href="index.html"><img src="src/img/logo/Zaragoza1.png" alt="Constructora Zaragoza"></a>
+        <a href="index.html"><img src="src/img/logo/favZaragoza.png" alt="Constructora Zaragoza"></a>
       </div>
       <span>CONSTRUCTORA<br><b>ZARAGOZA</b></span>
     </div>
+
+    
 
     <nav>
       <a href="index.html">Inicio</a>
@@ -46,7 +47,7 @@
   </div>
 </div>
 
-      <a href="#">Proyectos</a>
+      <a href="proyectos.html">Proyectos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
   </header>
@@ -90,7 +91,6 @@
 
 </div>
 
-
   <!-- SOCIAL -->
   <div class="social">
     <a href="wa.me/+522227301828">WHATSAPP</a>
@@ -106,8 +106,8 @@
       Construimos con visión y propósito. Cada proyecto refleja nuestra capacidad
       para crear soluciones arquitectónicas que perduran en el tiempo.
     </p>
-
-    <button>¿LISTO PARA QUE TU PROYECTO TRASCIENDA?</button>
+    <a href="contacto.html"><button>¿LISTO PARA QUE TU PROYECTO TRASCIENDA?</button></a>
+    
   </div>
 
 
@@ -139,13 +139,13 @@
 
     <p>
       La filosofía de Constructora Zaragoza es desarrollar soluciones
-      arquitectónicas que trascienden. Nos enfocamos en crear proyectos únicos
+      arquitectónicas que trasciendan. Nos enfocamos en crear proyectos únicos
       que transforman el entorno y mejoran la calidad de vida de quienes los
       utilizan.
     </p>
 
     <p>
-      Desde el diseño hasta la ejecución, convertimos las visiones de nuestros
+      Desde el diseño, hasta la ejecución, convertimos las visiones de nuestros
       clientes en realidades que cumplen sueños.
     </p>
 
@@ -153,7 +153,23 @@
 
   </div>
 
+    <div id="popup-card" class="popup-card">
+        <span class="close-btn" onclick="togglePopup()">✖</span>
+        <img src="src/img/logo/favZaragoza.png" alt="Perfil de María" class="profile-image">
+        <div class="popup-content">
+          <h4> - Asistente Virtual -</h4>
+          <p>Bienvenido a Constructora. Si necesitas más información sobre nuestros servicios o necesitas ayuda de un asesor para realizar cualquier trámite con tu afore, envíanos mensaje.</p>
+          <div class="popup-actions">
+            <a href="#" class="email-btn">E-mail</a>
+            <a href="https://wa.me/522227301828" target="_blank" class="whatsapp-btn">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
 </section>
+
+
+
 
 <section class="services-section" id="servicios">
 
@@ -171,7 +187,7 @@
         Soluciones técnicas que garantizan estabilidad, seguridad y tecnología avanzada
         en cada proyecto.
       </p>
-      <a href="#">LEER MÁS</a>
+      <a href="seguridad.html">LEER MÁS</a>
     </article>
 
     <article class="service-card" style="--card-bg: url('img/planos-2.jpg');">
@@ -180,7 +196,7 @@
         Proyectos que integran estética, funcionalidad y sustentabilidad para maximizar
         el impacto y la eficiencia.
       </p>
-      <a href="#">LEER MÁS</a>
+      <a href="obra-civil.html">LEER MÁS</a>
     </article>
 
     <article class="service-card" style="--card-bg: url('img/planos-3.jpg');">
@@ -189,12 +205,12 @@
         Ejecución de obras con altos estándares de calidad, cumplimiento de plazos y
         normativas establecidas.
       </p>
-      <a href="#">LEER MÁS</a>
+      <a href="infraestructura.html">LEER MÁS</a>
     </article>
 
   </div>
 
-  <div class="counters">
+  <!-- <div class="counters">
 
     <div class="counter-item">
       <div class="counter-number" data-target="10">0</div>
@@ -216,7 +232,7 @@
       <div class="counter-label">OFICINAS EN MÉXICO</div>
     </div>
 
-  </div>
+  </div> -->
 
 </section>
 
@@ -258,7 +274,7 @@
   </div>
 
   <div class="cta-action">
-    <a href="contacto.html" class="cta-btn">CONTÁCTANOS</a>
+    <a href="#contacto" class="cta-btn">CONTÁCTANOS</a>
   </div>
 
 </section>
@@ -322,7 +338,7 @@
     <div class="footer-brand">
 
       <div class="brand-logo">
-        <a href="index.html"><img src="src/img/logo/Zaragoza1.png" alt="Constructora Zaragoza"></a>
+        <img src="src/img/logo/Zaragoza1.png" alt="Constructora Zaragoza">
       </div>
 
       <p class="brand-tagline">Realidades que cumplen sueños</p>
@@ -339,34 +355,26 @@
         <span>📍</span>
         <p>
           C. 29 Sur 4, La Paz, 72160<br>
-          Heroica Puebla de Zaragoza, Pue.
+          Heroica Puebla de Zaragoza, Puebla.
         </p>
       </div>
 
       <div class="contact-item">
-  <span>✉️</span>
-  <p>
-    <a href="mailto:proyectos@constructorazaragoza.com">
-      proyectos@constructorazaragoza.com
-    </a>
-  </p>
-</div>
+        <span>✉️</span>
+        <p>proyectos@constructorazaragoza.com</p>
+      </div>
 
       <div class="contact-item">
-  <span>📞</span>
-  <p>
-    <a href="tel:+522227301828">
-      (222) 730 1828
-    </a>
-  </p>
-</div>
+        <span>📞</span>
+        <p>(222) 730 1828</p>
+      </div>
 
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Constructora Zaragoza. Todos los derechos reservados.</p>
+    <p>© Constructora Zaragoza. Todos los derechos reservados.</p>
   </div>
 
 </footer>
@@ -374,6 +382,36 @@
 
 
 <script src="src/js/main.js"></script>
+
+
+
+
+<div id="popup-card" class="popup-card">
+
+  <span class="close-btn" onclick="togglePopup()">✖</span>
+
+  <img src="src/img/logo/favZaragoza.png" alt="Asistente" class="profile-image">
+
+  <div class="popup-content">
+    <h4>- Asistente Virtual -</h4>
+    <p>
+      ¿Necesitas más información sobre nuestros servicios o cotizar tu proyecto?
+      Escríbenos y con gusto te atendemos.
+    </p>
+
+    <div class="popup-actions">
+      <a href="mailto:proyectos@constructorazaragoza.com" class="email-btn">E-mail</a>
+      <a href="https://wa.me/522227301828" target="_blank" class="whatsapp-btn">WhatsApp</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ICONO FLOTANTE -->
+<div id="chat-icon" class="chat-icon" onclick="togglePopup()">
+  💬
+</div>
+
 
 </body>
 </html>
