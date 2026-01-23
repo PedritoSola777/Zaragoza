@@ -566,6 +566,7 @@ body {
   }
 }
 
+
 /* ================= FOOTER ================= */
 
 .site-footer {
@@ -628,6 +629,22 @@ body {
   color: rgba(255,255,255,0.4);
 }
 
+/* ================= FOOTER LINKS RESET ================= */
+
+.site-footer a,
+.site-footer a:visited,
+.site-footer a:hover,
+.site-footer a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  opacity: 0.75;
+}
+
+
+
 /* RESPONSIVE */
 
 @media (max-width: 850px) {
@@ -641,6 +658,3 @@ body {
     justify-content: center;
   }
 }
-
-
-

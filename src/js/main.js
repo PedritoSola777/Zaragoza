@@ -112,3 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lastScrollY = currentScroll;
   });
+
+
+  function togglePopup() {
+  const popup = document.getElementById('popup-card');
+  const chatIcon = document.getElementById('chat-icon');
+
+  if (popup.style.display === 'none' || popup.style.display === '') {
+    popup.style.display = 'flex';
+    chatIcon.style.display = 'none';
+  } else {
+    popup.style.display = 'none';
+    chatIcon.style.display = 'flex';
+  }
+}

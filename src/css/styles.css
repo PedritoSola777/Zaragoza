@@ -1075,3 +1075,156 @@ body {
     justify-content: center;
   }
 }
+
+
+/*chat bot*/
+    .popup-card {
+  position: fixed;
+  bottom: 80px; /* espacio para evitar el chat-icon */
+  right: 20px;
+  width: 450px;
+  max-width: 90vw; /* limitar ancho en móviles */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  align-self: center;
+}
+
+.popup-content h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.popup-content p {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.email-btn,
+.whatsapp-btn {
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.email-btn {
+  background-color: #007BFF;
+  color: #e0ffe0;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: #e0ffe0;
+}
+
+.email-btn:hover,
+.whatsapp-btn:hover {
+  opacity: 0.9;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+}
+
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1b72b2;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 🔽 Responsividad para móviles */
+@media screen and (max-width: 480px) {
+  .popup-card {
+    width: 90%;
+    right: 5%;
+    bottom: 90px;
+    padding: 10px;
+  }
+
+  .popup-content h4 {
+    font-size: 14px;
+  }
+
+  .popup-content p {
+    font-size: 13px;
+  }
+
+  .popup-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-btn,
+  .whatsapp-btn {
+    width: 80%;
+    text-align: center;
+  }
+
+  .close-btn {
+    font-size: 18px;
+  }
+}
+   
+
+.wa-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: .85rem;
+  font-weight: 500;
+  transition: .25s ease;
+}
+
+.wa-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-1px);
+}
