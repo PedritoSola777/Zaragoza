@@ -459,38 +459,27 @@
     <!-- FORM -->
     <div class="contact-form">
       <form
-  netlify name="FormContacto" method="POST" class="theme-form-one form-validation" autocomplete="off" action="Gracias/"
+  name="contacto"
+  method="POST"
+  data-netlify="true"
+  action="/gracias/"
+  autocomplete="off"
 >
 
-  <!-- requerido por Netlify -->
   <input type="hidden" name="form-name" value="contacto">
 
-  <h2>Ponte en Contacto</h2>
-  <p>Tu email no será publicado. Los campos obligatorios están marcados con *</p>
+  <h2>Ponte en contacto</h2>
 
-  <input
-    type="text"
-    name="nombre"
-    placeholder="Tu nombre *"
-    required
-  >
+  <input type="text" name="nombre" placeholder="Tu nombre" required>
 
-  <input
-    type="email"
-    name="email"
-    placeholder="Tu Email *"
-    required
-  >
+  <input type="email" name="email" placeholder="Tu email" required>
 
-  <textarea
-    name="mensaje"
-    placeholder="Mensaje..."
-    required
-  ></textarea>
+  <textarea name="mensaje" placeholder="Mensaje" required></textarea>
 
-  <button type="submit">ENVIAR MENSAJE</button>
+  <button type="submit">Enviar</button>
 
 </form>
+
 
     </div>
 
