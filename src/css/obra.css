@@ -567,94 +567,34 @@ body {
 }
 
 
-/* ================= FOOTER ================= */
-
-.site-footer {
-  background: #121212;
-  color: #cccccc;
-  padding-top: 80px;
-  font-family: "Poppins", sans-serif;
+.service-image-side {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 8%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
+.service-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* BRAND */
-
-.footer-brand img {
-  width: 160px;
-  margin-bottom: 18px;
+.service-image-side {
+  width: 100%;
+  min-height: 520px;     /* da cuerpo a la columna */
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
 }
 
-.brand-tagline {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.6);
-}
-
-/* CONTACT */
-
-.footer-contact h4 {
-  font-size: 1rem;
-  margin-bottom: 22px;
-  color: white;
-}
-
-.contact-item {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 18px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.contact-item span {
-  font-size: 1rem;
-}
-
-/* BOTTOM */
-
-.footer-bottom {
-  margin-top: 70px;
-  padding: 20px 8%;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
-}
-
-/* ================= FOOTER LINKS RESET ================= */
-
-.site-footer a,
-.site-footer a:visited,
-.site-footer a:hover,
-.site-footer a:active {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  opacity: 0.75;
-}
-
-
-
-/* RESPONSIVE */
-
-@media (max-width: 850px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
-    text-align: center;
-  }
-
-  .contact-item {
-    justify-content: center;
-  }
+.service-image-side img {
+  width: 140%;          /* forzamos ancho extra */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin-left: -20%;    /* recentra después del zoom */
 }
