@@ -367,7 +367,7 @@ body {
 
 .service-hero {
   height: 60vh;
-  background: url("https://img.freepik.com/foto-gratis/escena-monocromatica-que-representa-vida-trabajadores-sitio-industria-construccion_23-2151431492.jpg?t=st=1768588149~exp=1768591749~hmac=e1aa310823e4a2b17180079ecf08a1651504aacc3ea8466b62adfaad6de78c36&w=1480") center/cover no-repeat;
+  background: url("../img/banners/obra.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -376,6 +376,20 @@ body {
   position: relative;
   text-align: center;
 }
+
+.service-menu a.active{
+  background:rgba(255,255,255,.15);
+  border:none;
+}
+
+.service-menu a:focus,
+.service-menu a:focus-visible,
+.service-menu a:active {
+  outline: none;
+  box-shadow: none;
+}
+
+
 
 .hero-overlay {
   position: absolute;
@@ -598,3 +612,4 @@ body {
   display: block;
   margin-left: -20%;    /* recentra después del zoom */
 }
+
