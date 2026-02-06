@@ -1029,6 +1029,11 @@ body {
   margin-bottom: 18px;
   font-size: 0.9rem;
   line-height: 1.5;
+  
+}
+
+.contact-item p {
+  color: white;
 }
 
 .contact-item span {
