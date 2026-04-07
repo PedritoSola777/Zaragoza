@@ -1251,3 +1251,9 @@ body {
   background: #1ebe5d;
   transform: translateY(-1px);
 }
+
+
+.mobile-menu-panel a {
+  display: block;
+  padding: 12px 0; /* ajusta este valor */
+}
