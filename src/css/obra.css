@@ -559,21 +559,21 @@ body {
   }
 }
 
-@media (max-width:480px){
-
-  .service-hero h1{
-    font-size:1.5rem;
-  }
-
-  .service-content h2{
-    font-size:1.4rem;
+@media (max-width: 768px){
+  .service-menu{
+    display:flex;
+    flex-direction:column; /* 🔥 vuelve a 1 columna */
+    padding:15px 10px; /* reduce la caja azul */
+    gap:4px;
   }
 
   .service-menu a{
-    font-size:.65rem;
-    padding:8px 12px;
+    font-size:.75rem; /* texto más chico */
+    padding:10px 12px; /* menos alto */
+    text-align:left; /* como en desktop */
   }
 }
+
 
 
 .service-image-side {
