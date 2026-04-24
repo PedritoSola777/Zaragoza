@@ -563,48 +563,152 @@ body {
   .service-menu{
     display:flex;
     flex-direction:column; /* 🔥 vuelve a 1 columna */
-    padding:15px 10px; /* reduce la caja azul */
-    gap:4px;
+    padding:10px 8px; /* reduce la caja azul */
+    gap:3px;
   }
 
   .service-menu a{
-    font-size:.75rem; /* texto más chico */
-    padding:10px 12px; /* menos alto */
-    text-align:left; /* como en desktop */
+    font-size:.72rem; /* ↓ un poco más compacto */
+    padding:8px 10px; /* ↓ menos altura */
+    line-height:1.2; /* ↓ evita que crezca verticalmente */
+    border-radius:5px;
+    border:1px solid rgba(255,255,255,.25); /* ↓ más sutil */
+  }
+
+  .service-menu a.active{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.5);
+  }
+
+}
+
+@media (max-width: 768px){
+  .service-layout{
+    grid-template-columns: 1fr;
+    padding: 12px 6% 30px;
+    margin-top: 0;
+  }
+
+  .service-hero{
+    margin-bottom: 0;
+  }
+
+  .service-menu{
+    padding: 10px 8px;
+    gap: 4px;
   }
 }
 
+@media (max-width: 768px){
 
+  .service-content p{
+    font-size: .85rem; /* antes .9rem */
+    line-height: 1.5;
+  }
 
-.service-image-side {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
+  .service-content li{
+    font-size: .85rem;
+  }
+
+  .service-content h2{
+    font-size: 1.5rem; /* leve reducción */
+  }
+
+  .service-content h3{
+    font-size: 1.1rem;
+  }
+
+  .service-content h4{
+    font-size: 1rem;
+  }
+
 }
 
-.service-image-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+
+/* 1. EL CONTENEDOR PADRE */
+.service-layout {
+  display: flex; /* Usamos flex para que sea más sencillo de manejar */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  align-items: flex-start; /* Esto es CLAVE para que la imagen no se estire de alto */
 }
 
+/* 2. EL CONTENEDOR DE LA IMAGEN */
 .service-image-side {
+  flex: 0 0 40%;    /* La imagen ocupa el 40% del ancho */
   width: 100%;
-  min-height: 520px;     /* da cuerpo a la columna */
+  height: auto;     /* CAMBIO IMPORTANTE: Permitimos que la altura sea natural */
   overflow: hidden;
   border-radius: 10px;
-  position: relative;
 }
 
+/* 3. LA IMAGEN */
 .service-image-side img {
-  width: 140%;          /* forzamos ancho extra */
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  width: 100%;
+  height: auto;     /* La imagen manda sobre su propia altura, no se corta */
   display: block;
-  margin-left: -20%;    /* recentra después del zoom */
+  object-fit: initial; /* Eliminamos el 'cover' que causaba el zoom/recorte */
 }
 
+/* 4. EL CONTENIDO DE TEXTO */
+.service-content {
+  flex: 1;          /* El texto ocupa el resto del espacio */
+}
+
+/* 5. RESET DE VIÑETAS (Para quitar las palomas y volver a los círculos) */
+.service-content ul {
+  list-style: disc; /* Volvemos al punto tradicional */
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.service-content li {
+  padding: 5px 0;
+  border-bottom: none; /* Quitamos las líneas divisorias si no las quieres */
+  color: #444;
+  display: list-item;  /* Aseguramos que se comporte como lista */
+}
+
+/* Quita cualquier rastro de las palomas si se quedaron pegadas */
+.service-content li::before {
+  content: none;
+}
+
+/* 6. AJUSTE PARA MÓVIL */
+@media (max-width: 768px) {
+  .service-layout {
+    flex-direction: column; /* Imagen arriba, texto abajo */
+  }
+  
+  .service-image-side {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* Esto solo afectará a computadoras (Desktop) */
+@media (min-width: 769px) {
+  .service-image-side {
+    flex: 0 0 40%;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    
+    /* AJUSTE DE POSICIÓN: */
+    margin-top: 250px; /* Empuja la imagen hacia abajo para centrarla con el texto */
+  }
+}
+
+/* El resto se queda igual para mantener la imagen arriba en móvil */
+@media (max-width: 768px) {
+  .service-layout {
+    flex-direction: column;
+  }
+  .service-image-side {
+    margin-top: 0; /* En móvil no queremos ese espacio extra arriba */
+    width: 100%;
+  }
+}
