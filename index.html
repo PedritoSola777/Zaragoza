@@ -6,6 +6,163 @@
   <title>Constructora Zaragoza</title>
   <link rel="stylesheet" href="src/css/styles.css">
   <link rel="shortcut icon" href="src/img/logo/favZaragoza.png" type="image/x-icon">
+
+  <style>
+    .services-section{
+  width: 100%;
+  padding: 90px 24px;
+}
+
+.services-header{
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.services-header small{
+  display: block;
+  margin-bottom: 12px;
+}
+
+.services-header h2{
+  margin: 0;
+}
+
+.services-header .divider{
+  width: 70px;
+  height: 4px;
+  margin: 22px auto 0;
+}
+
+.services-grid{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.service-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  min-height: 250px;
+  padding: 32px;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+.service-card img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.service-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.42),
+    rgba(0,0,0,0.82)
+  );
+  z-index: 1;
+}
+
+.service-card:hover img{
+  transform: scale(1.08);
+}
+
+.service-overlay{
+  display: none;
+}
+
+.service-content{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  min-height: 95px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-content h3{
+  color: #fff;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.45);
+}
+
+.service-content p{
+  color: rgba(255,255,255,0.95);
+  line-height: 1.6;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
+
+@media (max-width: 1024px){
+  .services-section{
+    padding: 75px 20px;
+  }
+
+  .services-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .service-card{
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 767px){
+  .services-section{
+    padding: 60px 16px;
+  }
+
+  .services-grid{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .services-header{
+    margin-bottom: 40px;
+  }
+
+  .service-card{
+    min-height: 230px;
+    padding: 26px 20px;
+  }
+
+  .service-content{
+    max-width: 300px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 420px){
+  .service-card{
+    min-height: 210px;
+    border-radius: 15px;
+  }
+}
+  </style>
+
 </head>
 <body>
 
@@ -167,96 +324,122 @@
 
   <div class="services-grid">
 
-    <article class="service-card" style="--card-bg: url('./src/img/bg-iconbox3.jpg');">
-  <h3>Demolición</h3>
-  <p>Demolición de concreto, losa o muros.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="./src/img/demolicion" alt="Demolición">
+      <div class="service-overlay"></div>
 
-<article class="service-card" style="--card-bg: url('img/planos-2.jpg');">
-  <h3>Aplanado fino</h3>
-  <p>Aplanado fino con pasta o yeso.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+      <div class="service-content">
+        <h3>Demolición</h3>
+        <p>Demolición de concreto, losa o muros.</p>
+      </div>
+    </article>
 
-<article class="service-card" style="--card-bg: url('img/planos-3.jpg');">
-  <h3>Aplanado con cemento</h3>
-  <p>Aplanado fino de muros con mezcla de cemento y arena.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://www.cemix.com/wp-content/uploads/2025/10/aplanado-grueso-tipo-de-aplanado-para-paredes-1-1200x600.jpg" alt="Aplanado fino">
+      <div class="service-overlay"></div>
 
-<article class="service-card">
-  <h3>Impermeabilización</h3>
-  <p>Impermeabilización en azotea.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+      <div class="service-content">
+        <h3>Aplanado fino</h3>
+        <p>Aplanado fino con pasta o yeso.</p>
+      </div>
+    </article>
 
-<article class="service-card">
-  <h3>Conexión hidráulica</h3>
-  <p>Instalación hidráulica de conexión de la red municipal a la cisterna.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://www.cemix.com/wp-content/uploads/2023/02/como-hacer-aplanado-de-paredes.jpg" alt="Aplanado con cemento">
+      <div class="service-overlay"></div>
 
-<article class="service-card">
-  <h3>Instalación eléctrica</h3>
-  <p>Suministro e instalación de accesorios eléctricos.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+      <div class="service-content">
+        <h3>Aplanado con cemento</h3>
+        <p>Aplanado fino de muros con mezcla de cemento y arena.</p>
+      </div>
+    </article>
 
-<article class="service-card">
-  <h3>Puertas y ventanas</h3>
-  <p>Instalación de puertas y ventanas de aluminio o herrería.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://airregio.com/wp-content/uploads/2023/09/tecnicas-de-impermeabilizacion.jpg" alt="Impermeabilización">
+      <div class="service-overlay"></div>
 
-<article class="service-card">
-  <h3>Pintura</h3>
-  <p>Pintura en muros, plafones, barandales y rejas.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+      <div class="service-content">
+        <h3>Impermeabilización</h3>
+        <p>Impermeabilización en azotea.</p>
+      </div>
+    </article>
 
-<article class="service-card">
-  <h3>Elevación de agua</h3>
-  <p>Instalación hidráulica para elevación de agua de cisterna a tinaco.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://vasaconstrucciones.com.mx/wp-content/uploads/2021/07/hidraulicas1.jpg" alt="Conexión hidráulica">
+      <div class="service-overlay"></div>
 
-<article class="service-card">
-  <h3>Muebles de baño</h3>
-  <p>Colocación de muebles de baño.</p>
-  <!-- <a href="#">LEER MÁS</a> -->
-</article>
+      <div class="service-content">
+        <h3>Conexión hidráulica</h3>
+        <p>Instalación hidráulica de conexión de la red municipal a la cisterna.</p>
+      </div>
+    </article>
+
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://arisueno.com/wp-content/uploads/elementor/thumbs/ingeniero-electrico-medidor-digital-verificar-voltaje-corriente-electrica-disyuntor-qazu832kmgie9838cedg6lbbig6b3mzsz877kqvbrs.jpg" alt="Instalación eléctrica">
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+        <h3>Instalación eléctrica</h3>
+        <p>Suministro e instalación de accesorios eléctricos.</p>
+      </div>
+    </article>
+
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://aprodoor.com/wp-content/uploads/2025/07/Installer-lifting-frame-for-glass-sliding-door.webp" alt="Puertas y ventanas">
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+        <h3>Puertas y ventanas</h3>
+        <p>Instalación de puertas y ventanas de aluminio o herrería.</p>
+      </div>
+    </article>
+
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://blog.homedepot.com.mx/wp-content/uploads/2024/01/pintar-muro-1024x684.png" alt="Pintura">
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+        <h3>Pintura</h3>
+        <p>Pintura en muros, plafones, barandales y rejas.</p>
+      </div>
+    </article>
+
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://www.mndelgolfo.com/blog/wp-content/uploads/2021/05/Sabes-que-es-y-como-funciona-una-cisterna-de-agua2.jpg" alt="Conexión hidráulica">
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+        <h3>Elevación de agua</h3>
+        <p>Instalación hidráulica para elevación de agua de cisterna a tinaco.</p>
+      </div>
+    </article>
+
+    <!-- CARD -->
+    <article class="service-card">
+      <img src="https://planner5d.com/blog/content/images/2022/02/r-architecture-P_0tnQ8hb70-unsplash.jpg" alt="Muebles de baño">
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+        <h3>Muebles de baño</h3>
+        <p>Colocación de muebles de baño.</p>
+      </div>
+    </article>
 
   </div>
-
-  <!-- <div class="counters">
-
-    <div class="counter-item">
-      <div class="counter-number" data-target="10">0</div>
-      <div class="counter-label">PROYECTOS RECIENTES</div>
-    </div>
-
-    <div class="counter-item">
-      <div class="counter-number" data-target="15">0</div>
-      <div class="counter-label">AÑOS DE EXPERIENCIA</div>
-    </div>
-
-    <div class="counter-item">
-      <div class="counter-number" data-target="100">0</div>
-      <div class="counter-label">PROYECTOS EXITOSOS</div>
-    </div>
-
-    <div class="counter-item">
-      <div class="counter-number" data-target="2">0</div>
-      <div class="counter-label">OFICINAS EN MÉXICO</div>
-    </div>
-
-  </div> -->
 
 </section>
 
 
-<section class="image-services">
+<!-- <section class="image-services">
 
   <div class="image-grid">
 
@@ -278,7 +461,7 @@
 
   </div>
 
-</section>
+</section> -->
 
 <!-- ================= CTA MATERIALIZA TUS SUEÑOS ================= -->
 
