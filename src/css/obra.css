@@ -367,7 +367,7 @@ body {
 
 .service-hero {
   height: 60vh;
-  background: url("../img/banners/obra.jpg") center/cover no-repeat;
+  background: url("../img/banners/slide1.png") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;

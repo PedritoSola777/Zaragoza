@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios</title>
+<link rel="shortcut icon" href="src/img/logo/favZaragoza.png" type="image/x-icon">
+<link rel="stylesheet" href="src/css/styles.css">
+<link rel="stylesheet" href="src/css/obra.css">
+
+<style>
+  p {
+      font-family: "Segoe UI", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #222;
+      margin-bottom: 20px;
+      }
+
+
+      li{
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+
+   .service-content p,
+   .service-content li {
+      font-size: .9rem;
+   }
+
+}
+</style>
+
+<style>
+    .services-section{
+  width: 100%;
+  padding: 90px 24px;
+}
+
+.services-header{
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.services-header small{
+  display: block;
+  margin-bottom: 12px;
+}
+
+.services-header h2{
+  margin: 0;
+}
+
+.services-header .divider{
+  width: 70px;
+  height: 4px;
+  margin: 22px auto 0;
+}
+
+.services-grid{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.service-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  min-height: 250px;
+  padding: 32px;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+.service-card img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.service-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.42),
+    rgba(0,0,0,0.82)
+  );
+  z-index: 1;
+}
+
+.service-card:hover img{
+  transform: scale(1.08);
+}
+
+.service-overlay{
+  display: none;
+}
+
+.service-content{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  min-height: 95px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-content h3{
+  color: #fff;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.45);
+}
+
+.service-content p{
+  color: rgba(255,255,255,0.95);
+  line-height: 1.6;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
+
+@media (max-width: 1024px){
+  .services-section{
+    padding: 75px 20px;
+  }
+
+  .services-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .service-card{
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 767px){
+  .services-section{
+    padding: 60px 16px;
+  }
+
+  .services-grid{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .services-header{
+    margin-bottom: 40px;
+  }
+
+  .service-card{
+    min-height: 230px;
+    padding: 26px 20px;
+  }
+
+  .service-content{
+    max-width: 300px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 420px){
+  .service-card{
+    min-height: 210px;
+    border-radius: 15px;
+  }
+}
+  </style>
+
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
+  <header class="navbar">
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    <div class="logo">
+      <div class="brand-logo">
+        <a href="index.html"><img src="src/img/logo/Zaragoza7.png" alt="Constructora Zaragoza"></a>
+      </div>
+      <span>CONSTRUCTORA<br><b>ZARAGOZA</b></span>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+   <div class="nav-item">
+  <a href="Servicios.html" class="dropbtn">
+    Servicios
+  </a>
+</div>
+
+      <a href="proyectos.html">Proyectos</a>
+<a href="talento.html">Talento Humano</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+
+  <div class="mobile-menu-panel">
+
+    <div class="mobile-menu-header">
+      <button class="close-menu" id="closeMenu">✕</button>
+    </div>
+
+    <nav class="mobile-nav">
+
+      <a href="index.html">Inicio</a>
+
+      <div class="mobile-dropdown">
+  <a href="Servicios.html" class="mobile-dropbtn">
+    Servicios
+  </a>
+</div>
+
+      <a href="proyectos.html">Proyectos</a>
+<a href="talento.html">Talento Humano</a>
+      <a href="contacto.html">Contacto</a>
+
+    </nav>
+
+  </div>
+
+</div>
+
+<!-- ================= BANNER ================= -->
+<section class="service-hero">
+  <div class="hero-overlay"></div>
+  <h1 id="heroTitle">NUESTROS SERVICIOS</h1>
+  <!-- <span>HOME • NUESTROS SERVICIOS • <b id="heroBreadcrumb"></b></span> -->
+</section>
+
+<section class="services-section" id="servicios">
+
+  <div class="services-header">
+    <small>[ NUESTROS SERVICIOS ]</small>
+    <h2>¿Qué Ofrecemos?</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="services-grid">
+
+    <article class="service-card">
+      <img src="./src/img/banners/obra.jpg" alt="Obra civil y estructura">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Obra civil y estructura</h3>
+        <p>Construcción, adecuación y mantenimiento de elementos estructurales y obra civil.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="./src/img/banners/instalaciones.jpg" alt="Instalaciones especializadas">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Instalaciones especializadas</h3>
+        <p>Instalaciones técnicas para proyectos comerciales, industriales y habitacionales.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="./src/img/banners/seguridad.jpg" alt="Sistemas de seguridad">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Sistemas de seguridad</h3>
+        <p>Implementación de soluciones de seguridad para protección y control de espacios.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="./src/img/banners/climas.jpg" alt="Climatización y control ambiental">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Climatización y control ambiental</h3>
+        <p>Soluciones de climatización, ventilación y control ambiental para interiores.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="./src/img/banners/it.jpg" alt="Infraestructura técnica y operativa">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Infraestructura técnica y operativa</h3>
+        <p>Desarrollo e instalación de infraestructura funcional para operación diaria.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="./src/img/banners/interiores.jpg" alt="Acabados y detalles interiores">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Acabados y detalles interiores</h3>
+        <p>Acabados interiores, recubrimientos y detalles finales para mejorar cada espacio.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="./src/img/banners/matenimiento.jpg" alt="Mantenimiento integral">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Mantenimiento integral</h3>
+        <p>Servicios de mantenimiento preventivo y correctivo para inmuebles e instalaciones.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="./src/img/banners/contrato.avif" alt="Pólizas y contratos de servicio">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Pólizas y contratos de servicio</h3>
+        <p>Planes de atención continua mediante pólizas y contratos personalizados.</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="./src/img/banners/marketing.jpg" alt="Comercialización y suministro">
+      <div class="service-overlay"></div>
+      <div class="service-content">
+        <h3>Comercialización y suministro</h3>
+        <p>Suministro de materiales, equipos y soluciones para proyectos de construcción.</p>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<footer class="site-footer">
+
+  <div class="footer-container">
+
+    <!-- LOGO + FRASE -->
+    <div class="footer-brand">
+
+      <div class="brand-logo">
+        <img src="src/img/logo/Zaragoza1.png" alt="Constructora Zaragoza">
+      </div>
+
+      <p class="brand-tagline">Realidades que cumplen sueños</p>
+
+    </div>
+
+
+    <!-- CONTACTO -->
+    <div class="footer-contact">
+
+      <h4>Contacto</h4>
+
+      <div class="contact-item">
+        <span>📍</span>
+        <p>
+          C. 29 Sur 4, La Paz, 72160,<br>
+          Heroica Puebla de Zaragoza, Puebla.
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <span>✉️</span>
+        <p>proyectos@constructorazaragoza.mx</p>
+      </div>
+
+      <div class="contact-item">
+        <span>📞</span>
+        <p>(222) 730 1828</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© Constructora Zaragoza. Todos los derechos reservados.</p>
+  </div>
+
+</footer>
+
+<script src="src/js/main.js"></script>
+</body>
+</html>
